@@ -11,7 +11,7 @@
     "dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
-    "build": "parcel build ./public/JS/index.js --dist-dir ./public/JS/bundled",
+    "build:js": "parcel build ./public/JS/index.js --dist-dir ./public/JS/bundled",
     "watch:js": "parcel serve ./public/JS/index.js --dist-dir ./public/JS/bundled"
   },
   "author": "Mridul",
