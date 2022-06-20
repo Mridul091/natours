@@ -22,7 +22,7 @@ if (userDataForm)
     form.append('name', document.getElementById('name').value);
     form.append('email', document.getElementById('email').value);
     form.append('photo', document.getElementById('photo').files[0]);
-    console.log(form);
+    // console.log(form);
     // const name = document.getElementById('name').value;
     // const email = document.getElementById('email').value;
     updateSettings(form, 'data');
@@ -46,7 +46,6 @@ if (userPasswordForm)
     const passwordCurrent = document.getElementById('password-current').value;
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('password-confirm').value;
-    console.log(password);
     await updateSettings(
       { passwordCurrent, password, passwordConfirm },
       'password'
