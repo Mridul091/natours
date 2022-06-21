@@ -3,16 +3,13 @@
   "version": "1.0.0",
   "description": "learning website",
   "main": "app.js",
-  "targets": {
-    "main": false
-  },
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
-    "build:js": "parcel build ./public/JS/index.js --dist-dir ./public/JS/bundled",
-    "watch:js": "parcel serve ./public/JS/index.js --dist-dir ./public/JS/bundled"
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url /JS",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js --public-url /JS"
   },
   "author": "Mridul",
   "license": "ISC",
@@ -50,7 +47,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "parcel": "^2.0.0-rc.0",
+    "parcel-bundler": "^1.12.3",
     "prettier": "^2.6.2"
   },
   "engines": {

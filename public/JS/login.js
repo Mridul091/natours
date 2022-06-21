@@ -1,5 +1,7 @@
-/*eslint-disable*/
+/* eslint-disable */
+import axios from 'axios';
 import { showAlert } from './alert';
+
 export const login = async (email, password) => {
   try {
     const res = await axios({
@@ -10,8 +12,9 @@ export const login = async (email, password) => {
         password,
       },
     });
+
     if (res.data.status === 'success') {
-      showAlert('success', 'Logged in succesfully');
+      showAlert('success', 'Logged in successfully!');
       window.setTimeout(() => {
         location.assign('/');
       }, 1500);
@@ -27,8 +30,9 @@ export const logout = async () => {
       method: 'GET',
       url: '/api/v1/users/logout',
     });
-    if (res.data.status === 'success') location.assign('/');
+    if ((res.data.status = 'success')) location.reload(true);
   } catch (err) {
-    showAlert('error', 'Error Logging Out Try Again');
+    console.log(err.response);
+    showAlert('error', 'Error logging out! Try again.');
   }
 };
